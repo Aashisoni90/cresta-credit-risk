@@ -1,0 +1,72 @@
+{
+  "caveat": "SHAP explains the MODEL, not the world. A high attribution means the model relies on that feature; it does not establish causation (PRD \u00a78.8).",
+  "n_test_rows": 4340,
+  "n_features": 14,
+  "base_value_logodds": 0.05889960378408432,
+  "base_rate": 0.5147206454984375,
+  "additivity_max_error": 2.193450927734375e-05,
+  "top_features": [
+    {
+      "feature": "ebit_to_assets",
+      "share_pct": 38.50093460083008
+    },
+    {
+      "feature": "roa",
+      "share_pct": 15.394379615783691
+    },
+    {
+      "feature": "retained_earnings_to_assets",
+      "share_pct": 10.844735145568848
+    },
+    {
+      "feature": "altman_z_ex_x4",
+      "share_pct": 7.733038902282715
+    },
+    {
+      "feature": "log_total_assets",
+      "share_pct": 6.738617897033691
+    },
+    {
+      "feature": "consecutive_loss_years",
+      "share_pct": 5.3668084144592285
+    },
+    {
+      "feature": "working_capital_to_assets",
+      "share_pct": 4.9898295402526855
+    },
+    {
+      "feature": "cur_ratio",
+      "share_pct": 2.451014518737793
+    },
+    {
+      "feature": "roa_yoy_change",
+      "share_pct": 2.3864071369171143
+    },
+    {
+      "feature": "altman_z_ex_x4_3yr_trend",
+      "share_pct": 2.013518810272217
+    }
+  ],
+  "block_shares": [
+    {
+      "block": "block3_profitability",
+      "share_pct": 64.74005126953125
+    },
+    {
+      "block": "block5_zscore",
+      "share_pct": 12.476714134216309
+    },
+    {
+      "block": "block2_liquidity",
+      "share_pct": 8.29140853881836
+    },
+    {
+      "block": "block6_temporal",
+      "share_pct": 7.753215789794922
+    },
+    {
+      "block": "block7_controls",
+      "share_pct": 6.738617897033691
+    }
+  ]
+}

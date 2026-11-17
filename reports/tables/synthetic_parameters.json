@@ -1,0 +1,21 @@
+{
+    "n_companies": 60000,
+    "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+    ],
+    "missingness_rate": 0.05,
+    "distress_base_rate": 0.03,
+    "esg_size_correlation": 0.4,
+    "esg_distress_uplift": -4.0,
+    "mean_log_assets": 12.0,
+    "std_log_assets": 1.5
+}

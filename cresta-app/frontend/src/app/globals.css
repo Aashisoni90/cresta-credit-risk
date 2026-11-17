@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  CRESTA — dark instrument.
+  Tokens live here; everything visual derives from them.
+*/
+:root {
+  /* --- surfaces (cool near-black slate) --- */
+  --ink-950: #0a0c10;
+  --ink-900: #0e1116;
+  --ink-850: #12161d;
+  --ink-800: #171c24;
+  --ink-750: #1e242e;
+  --ink-700: #2a313d;
+  /* 1.79:1 before. Used for the dimmest text and for hairline
+     borders, so it is held to the 3:1 non-text/large floor. */
+  --ink-600: #586477; /* 3.03:1 on --ink-850 */
+  /* WCAG 2.1 AA (§12.6). Measured against --ink-850, the lightest
+     surface these sit on: #545d6b scored 2.72:1, below the 4.5:1
+     floor for normal text, and it carries 65 text call sites plus
+     every chart axis label. Lightened to clear 4.5:1. */
+  --ink-500: #748092; /* 4.53:1 on --ink-850 */
+  --ink-400: #7a8494;
+  --ink-300: #a7b0bf;
+  --ink-100: #dde3ec;
+  --ink-50: #f2f5f9;
+
+  /* --- the risk lamp: the one accent, used like a warning light --- */
+  --amber: #f5a623;
+  --amber-dim: #8a5f1c;
+  --amber-glow: rgba(245, 166, 35, 0.13);
+
+  /* --- semantic model channels, carried consistently everywhere --- */
+  --model-a: #5b8def; /* financial-only baseline */
+  --model-b: #2dd4bf; /* ESG-augmented */
+
+  /* --- four-stop risk ramp (always paired with a text label) --- */
+  --risk-low: #35b87f;
+  --risk-moderate: #e6b450;
+  --risk-high: #f5a623;
+  --risk-critical: #f0524d;
+
+  --positive: #35b87f;
+  --negative: #f0524d;
+  --grid: #1b212b;
+
+  --shadow-panel: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  border-color: var(--ink-700);
+}
+
+html {
+  color-scheme: dark;
+  background-color: var(--ink-950);
+}
+
+body {
+  background-color: var(--ink-950);
+  color: var(--ink-100);
+  font-family: var(--font-body), "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--amber);
+  color: var(--ink-950);
+}
+
+/* thin instrument scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-700);
+  border-radius: 999px;
+  border: 2px solid var(--ink-900);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-600);
+}
+
+/* every number in this product is a readout */
+.tnum {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-feature-settings: "tnum" 1, "zero" 1;
+  letter-spacing: -0.01em;
+}
+
+.font-display {
+  font-family: var(--font-display), "Space Grotesk", system-ui, sans-serif;
+}
+
+/* the cut-loop spine glyph used as a divider */
+.spine-rule {
+  height: 1px;
+  background-image: linear-gradient(
+    90deg,
+    var(--ink-700) 0 32px,
+    transparent 32px 40px,
+    var(--amber) 40px 52px,
+    transparent 52px 60px,
+    var(--ink-700) 60px 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+  border-radius: 2px;
+}

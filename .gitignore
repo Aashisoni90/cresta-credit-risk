@@ -1,0 +1,35 @@
+# ─── BLOOMBERG LICENCE: DATA MUST NEVER BE COMMITTED ─────────────────────
+# PRD §18.3: the reproducibility package ships CODE and the UNIVERSE TICKER
+# LIST, never the data itself. Bloomberg terminal output may not be
+# redistributed. These rules are a licence control, not housekeeping — do not
+# relax them to "just share one CSV".
+# NOTE: git cannot re-include a file inside a fully-excluded directory, so the
+# path is opened up level by level before the one shippable file is un-ignored.
+data/*
+!data/reproducibility/
+data/reproducibility/*
+!data/reproducibility/universe_tickers.csv
+*.xlsx
+*.xls
+# Every other CSV in the tree is Bloomberg-derived or fitted from it.
+*.csv
+!data/reproducibility/universe_tickers.csv
+
+# Model artefacts are fitted ON that data and are derived works.
+models/**/*.pkl
+
+# ─── bulk / generated ────────────────────────────────────────────────────
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+cresta-app/frontend/.next/
+cresta-app/frontend/node_modules/
+.DS_Store
+.vscode/
+
+# ─── local config ────────────────────────────────────────────────────────
+.env
+*.log
+pptx_extracted/

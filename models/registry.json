@@ -1,0 +1,161 @@
+[
+  {
+    "version": "A-1.0.0-real",
+    "artefact": "models/model_A-1.0.0-real.pkl",
+    "artefact_sha256": "4714aa992ff80f7837d107cbd4f8a29c29488a4147ba29d9ecd984e6264bf701",
+    "trained_utc": "2026-10-27T08:11:39.870431+00:00",
+    "owner": "Varad Pal (CRESTA capstone)",
+    "git_commit": null,
+    "config_hash": "409661a383cb3d32e5b17e512e52a84339cd3d44f33cf3b75be653c8d681c2b1",
+    "python": "3.14.6",
+    "matrix": "data/processed/training_matrix.csv",
+    "matrix_sha256": "2375b54503f27ea0",
+    "n_train": 13242,
+    "n_test": 4830,
+    "threshold": 0.325,
+    "metrics": {
+      "Persistence (label at t)  [naive baseline]": {
+        "auc_roc": 0.8893,
+        "pr_auc": 0.712,
+        "ks": 0.7786
+      },
+      "Altman Z'' (benchmark)": {
+        "auc_roc": 0.7708,
+        "pr_auc": 0.6563,
+        "ks": 0.4852
+      },
+      "Altman Z'' @ conventional 1.1 cutoff": {
+        "auc_roc": 0.7708,
+        "pr_auc": 0.6563,
+        "ks": 0.4852
+      },
+      "Logistic regression (L2, balanced)": {
+        "auc_roc": 0.8855,
+        "pr_auc": 0.6549,
+        "ks": 0.6828
+      },
+      "XGBoost": {
+        "auc_roc": 0.9589,
+        "pr_auc": 0.8481,
+        "ks": 0.8005
+      }
+    },
+    "sector_exclusion_audit": {
+      "financial_rows_in_test": 398,
+      "financial_tickers_in_test": 206,
+      "auc_with_financials": 0.958851478141712,
+      "auc_without_financials": 0.9557431242307669,
+      "auc_ew_with_financials": 0.9548335510430274,
+      "auc_ew_without_financials": 0.9502155172413792
+    }
+  },
+  {
+    "version": "A-1.1.0-real",
+    "artefact": "models/model_A-1.1.0-real.pkl",
+    "artefact_sha256": "f029a02403cdc0f4926056d3db10e4f92d87e92c9f59b1b78be24d4bfde7db9f",
+    "trained_utc": "2026-10-27T13:30:38.809781+00:00",
+    "owner": "Varad Pal (CRESTA capstone)",
+    "git_commit": "7aae63abc4c0418328360c721b2f1c796ff93dab",
+    "config_hash": "f6df3ed0c8eb1bce6fa5a89e431b49916635febf09ad0c1137b3f7fece589044",
+    "python": "3.14.6",
+    "matrix": "data/processed/training_matrix.csv",
+    "matrix_sha256": "2f6990ff7e8e24b8",
+    "n_train": 11820,
+    "n_test": 4340,
+    "threshold": 0.2,
+    "metrics": {
+      "Persistence (label at t)  [naive baseline]": {
+        "auc_roc": 0.8859,
+        "pr_auc": 0.7109,
+        "ks": 0.7718
+      },
+      "Altman Z'' (benchmark)": {
+        "auc_roc": 0.7729,
+        "pr_auc": 0.6592,
+        "ks": 0.4888
+      },
+      "Altman Z'' @ conventional 1.1 cutoff": {
+        "auc_roc": 0.7729,
+        "pr_auc": 0.6592,
+        "ks": 0.4888
+      },
+      "Logistic regression (L2, balanced)": {
+        "auc_roc": 0.882,
+        "pr_auc": 0.661,
+        "ks": 0.6787
+      },
+      "XGBoost": {
+        "auc_roc": 0.955,
+        "pr_auc": 0.8487,
+        "ks": 0.7959
+      }
+    },
+    "sector_exclusion_audit": {
+      "exclusion_enforced": true,
+      "rows_excluded": 2457,
+      "tickers_excluded": 283,
+      "reasons": {
+        "gics_sector == Financials": 2021,
+        "sector unknown; company name matches financial pattern": 436
+      },
+      "financial_rows_remaining_in_test": 0
+    }
+  },
+  {
+    "version": "A-1.2.0-real",
+    "artefact": "models/model_A-1.2.0-real.pkl",
+    "artefact_sha256": "564b7a3ee9bc0acd794b61ebfc190641a0ca8de0bb6654e16e66ce60afa1f421",
+    "trained_utc": "2026-10-28T05:05:53.176073+00:00",
+    "owner": "Varad Pal (CRESTA capstone)",
+    "git_commit": "44cdd89b519da97eb7414ea6091db3c9e21113ac",
+    "config_hash": "48e3425b0530697b507dff8f88374321c5135d79c0d578ced786613eaceafcd7",
+    "python": "3.14.6",
+    "matrix": "data/processed/training_matrix.csv",
+    "matrix_sha256": "c6d64fd552bfad75",
+    "n_train": 11820,
+    "n_test": 4340,
+    "threshold": 0.245,
+    "metrics": {
+      "Persistence (label at t)  [naive baseline]": {
+        "auc_roc": 0.8859,
+        "pr_auc": 0.7109,
+        "ks": 0.7718
+      },
+      "Altman Z'' (benchmark)": {
+        "auc_roc": 0.7729,
+        "pr_auc": 0.6592,
+        "ks": 0.4888
+      },
+      "Altman Z'' @ conventional 1.1 cutoff": {
+        "auc_roc": 0.7729,
+        "pr_auc": 0.6592,
+        "ks": 0.4888
+      },
+      "Logistic regression (L2, balanced)": {
+        "auc_roc": 0.8742,
+        "pr_auc": 0.6655,
+        "ks": 0.6826
+      },
+      "XGBoost": {
+        "auc_roc": 0.9507,
+        "pr_auc": 0.8315,
+        "ks": 0.7819
+      }
+    },
+    "sector_exclusion_audit": {
+      "exclusion_enforced": true,
+      "rows_excluded": 2457,
+      "tickers_excluded": 283,
+      "reasons": {
+        "gics_sector == Financials": 2021,
+        "sector unknown; company name matches financial pattern": 436
+      },
+      "financial_rows_remaining_in_test": 0,
+      "point_in_time_features_dropped": [
+        "log_mkt_cap",
+        "equity_volatility"
+      ],
+      "point_in_time_remaining_in_features": []
+    }
+  }
+]

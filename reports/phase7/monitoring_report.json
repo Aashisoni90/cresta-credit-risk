@@ -1,0 +1,71 @@
+{
+  "reference_window": "FY2014-FY2020 (train)",
+  "current_window": "FY2022-FY2023 (test)",
+  "n_reference": 11820,
+  "n_current": 4340,
+  "triggers": [
+    {
+      "name": "feature_drift",
+      "status": "watch",
+      "value": 0.143,
+      "threshold_watch": 0.0,
+      "threshold_fire": 0.33,
+      "detail": "2/14 features at PSI >= 0.25; worst is consecutive_loss_years at 0.4295",
+      "evidence": {
+        "worst_feature": "consecutive_loss_years",
+        "worst_psi": 0.4295,
+        "n_watch": 5
+      }
+    },
+    {
+      "name": "missingness_rise",
+      "status": "ok",
+      "value": 0.05,
+      "threshold_watch": 10.0,
+      "threshold_fire": 20.0,
+      "detail": "altman_z_ex_x4 non-reporting rose +0.1pp (3.8% -> 3.9%)",
+      "evidence": {
+        "feature": "altman_z_ex_x4"
+      }
+    },
+    {
+      "name": "performance_decay",
+      "status": "ok",
+      "value": -0.0201,
+      "threshold_watch": 0.03,
+      "threshold_fire": 0.05,
+      "detail": "early-warning AUC 0.9244 -> 0.9445 (-0.0201) on 169 events",
+      "evidence": {
+        "reference_auc": 0.9244,
+        "current_auc": 0.9445,
+        "n_events": 169
+      }
+    },
+    {
+      "name": "prediction_shift",
+      "status": "ok",
+      "value": 0.022,
+      "threshold_watch": 0.1,
+      "threshold_fire": 0.2,
+      "detail": "mean predicted probability 0.3101 -> 0.3032 (+2.2% relative)",
+      "evidence": {
+        "reference_mean": 0.3101,
+        "current_mean": 0.3032
+      }
+    },
+    {
+      "name": "prevalence_shift",
+      "status": "ok",
+      "value": 0.187,
+      "threshold_watch": 0.25,
+      "threshold_fire": 0.5,
+      "detail": "base rate 27.90% -> 22.70% (+19% relative) on 4,340 rows; the \u00a78.4 threshold was chosen at the former",
+      "evidence": {
+        "reference_prevalence": 0.279,
+        "current_prevalence": 0.227
+      }
+    }
+  ],
+  "any_fired": false,
+  "retrain_recommended": false
+}
